@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-custom-grey bg-dark-subtle">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color: rgba(0, 0, 0, 0.977);">FrankEVENT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <div class="d-flex">
+                <a href="{{ path('app_event_index') }}" class="btn btn-dark-subtle me-2">All Events</a>
+                <a href="{{ path('app_event_filter_by_type', {'eventType': 'music'}) }}"
+                    class="btn btn-dark-subtle me-2">Music
+                    Events</a>
+                <a href="{{ path('app_event_filter_by_type', {'eventType': 'theater'}) }}"
+                    class="btn btn-dark-subtle me-2">Theater Events</a>
+                <a href="{{ path('app_event_filter_by_type', {'eventType': 'sport'}) }}" class="btn btn-dark-subtle">Sport
+                    Events</a>
+            </div>
+        </div>
+    </div>
+</nav>

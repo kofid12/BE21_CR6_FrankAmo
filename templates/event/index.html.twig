@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event index{% endblock %}
+
+{% block body %}
+    <h1>Event 2024</h1>
+    <div class="container">
+      <a class="btn btn-warning mb-3" href="{{ path('app_event_new') }}"
+    >Create new</a
+  >
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+     {% for event in events %}
+           <div class="card">
+            <img src="{{ event.picture }}" class="card-img-top" alt="Image of {{ event.name }}" style="height: 300px; object-fit: cover;">
+  <div class="card-body">
+    <h5 class="card-title">{{ event.name }}</h5>
+    <p class="card-text"><strong>DATE:</strong>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</p>
+  
+    <p><strong>URL:</strong> {% if event.url %}<a href="{{ event.url }}" target="_blank">{{ event.url }}</a>{% else %}N/A{% endif %}</p>
+                
+                 <a  class="btn btn-success" href="{{ path('app_event_show', {'id': event.id}) }}">show</a>
+                    <a class="btn btn-warning" href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>
+                
+
+
+
+
+  </div>
+</div>
+   
+                   
+              
+        {% else %}
+           
+                <h2>no event found</h2>
+            
+        {% endfor %}
+
+    </div>
+    
+    </div>
+
+       
+       
+
+   
+{% endblock %}
